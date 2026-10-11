@@ -1,291 +1,87 @@
-<!DOCTYPE html>
-<html lang="hy">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Իմ Լաբորատորիան</title>
-    <meta
-      name="description"
-      content="Հայկ Հակոբյանի ստեղծագործական լաբորատորիան՝ գրքեր, փորձեր, 3D ստեղծագործություններ և օրիգամի"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/global.css" />
-    <link rel="stylesheet" href="css/home.css" />
-    <link rel="stylesheet" href="css/animations.css" />
-  </head>
-  <body class="home-page">
-    <header class="topbar">
-      <div class="container nav-wrap">
-        <a class="brand" href="index.html">
-          <span class="brand-mark">⚗️</span>
-          <span>Իմ Լաբորատորիան</span>
-        </a>
-
-        <nav class="main-nav" aria-label="Հիմնական նավիգացիա">
-          <a href="index.html" class="active">Գլխավոր</a>
-          <a href="pages/books.html">Գրքեր</a>
-          <a href="pages/experiments.html">Փորձեր</a>
-          <a href="pages/3d-creations.html">3D ստեղծագործություններ</a>
-          <a href="pages/origamis.html">Օրիգամի</a>
-        </nav>
-      </div>
-    </header>
-
-    <main>
-      <section class="hero container">
-        <div class="hero-copy">
-          <p class="eyebrow">Հայկ Հակոբյան • Սովորում եմ ու ստեղծում</p>
-          <h1>Ստեղծագործության նոր աշխարհ</h1>
-          <p class="subtitle">
-            Այստեղ ես հավաքում եմ իմ պատմությունները, փորձերը, 3D ստեղծագործությունները, օրիգամին և
-            այն ամենը, ինչ ծնվում է իմ երևակայությունից։
-          </p>
-
-          <div class="hero-actions">
-            <a class="button primary" href="pages/books.html">Տեսնել գրքերը</a>
-            <a class="button secondary" href="pages/experiments.html">Տեսնել փորձերը</a>
-          </div>
-        </div>
-
-        <div class="hero-visual" aria-label="Ստեղծագործական լաբորատորիայի պատկեր">
-          <div class="planet"></div>
-          <div class="orb orb-one"></div>
-          <div class="orb orb-two"></div>
-          <div class="lab-card">
-            <span class="lab-tag">Սկսած 2026-ից</span>
-            <strong>Արկածասեր Տիգրանը</strong>
-            <small>Իմ առաջին մեծ արկածը</small>
-          </div>
-        </div>
-      </section>
-
-      <section class="featured container">
-        <div class="section-heading">
-          <p class="eyebrow">Առանձնահատուկ ստեղծագործություն</p>
-          <h2>Գիրք՝ «Արկածասեր Տիգրանը»</h2>
-        </div>
-
-        <div class="feature-card">
-          <div class="book-cover">
-            <span class="cover-label">Գիրք</span>
-            <h3>Արկածասեր Տիգրանը</h3>
-          </div>
-
-          <div class="feature-content">
-            <p>
-              Սա իմ առաջին մեծ արկածային պատմությունն է։ Այն լի է հետաքրքիր ճամփորդություններով,
-              բարդ իրավիճակներով, բայց նաև սիրով, մղումով և երևակայությամբ։ Ես ուզում եմ, որ այս
-              գիրքը լինի իմ առաջին քայլը դեպի ավելի մեծ ստեղծագործություններ։
-            </p>
-            <ul>
-              <li>Արկածներ</li>
-              <li>Հերոս</li>
-              <li>Ճամփորդություն</li>
-            </ul>
-            <a class="button primary" href="pages/books.html">Կարդալ ավելին</a>
-          </div>
-        </div>
-      </section>
-
-      <section class="categories container">
-        <div class="section-heading">
-          <p class="eyebrow">Իմ լաբորատորիայի բաժինները</p>
-          <h2>Բոլորն ու երևակայությունը մի տեղում</h2>
-        </div>
+# 🧪 Իմ Լաբորատորիան
 
-        <div class="category-grid">
-          <a class="category-card books" href="pages/books.html">
-            <span class="icon">📖</span>
-            <h3>Գրքեր</h3>
-            <p>Պատմություններ, արկածներ և նոր աշխարհներ իմ երևակայությունից։</p>
-          </a>
+Հայկ Հակոբյանի ստեղծագործական լաբորատորիան՝ կայք, որտեղ հավաքված են նրա գրքերը, փորձերը, 3D ստեղծագործությունները, օրիգամին և այլ ստեղծած առարկաները։
 
-          <a class="category-card experiments" href="pages/experiments.html">
-            <span class="icon">🧪</span>
-            <h3>Փորձեր</h3>
-            <p>Գիտական հետաքրքրություն, դիտարկումներ, նկարներ և արդյունքներ։</p>
-          </a>
+🌐 **Live Site**: https://h2spark.github.io/h2spark/
 
-          <a class="category-card d3" href="pages/3d-creations.html">
-            <span class="icon">🧩</span>
-            <h3>3D ստեղծագործություններ</h3>
-            <p>3D գծագրեր, ձևեր, առարկաներ և ստեղծված միրգեր ու կենդանիներ։</p>
-          </a>
+## 📋 Ներածություն
 
-          <a class="category-card origami" href="pages/origamis.html">
-            <span class="icon">📄</span>
-            <h3>Օրիգամի</h3>
-            <p>Թղթից արարածներ, ծաղիկներ, ձևեր և վառ երևակայություն։</p>
-          </a>
-        </div>
-      </section>
+Սա Հայկ Հակոբյանի անձնական ստեղծագործական էջն է։ Այստեղ նա կարող է ներկայացնել՝
 
-      <section class="lab-notes container">
-        <div class="section-heading">
-          <p class="eyebrow">Իմ մեթոդը</p>
-          <h2>Սովորում եմ, փորձում եմ, ստեղծում եմ</h2>
-        </div>
+- 📖 **Գրքեր** — պատմություններ, արկածներ և նոր աշխարհներ
+- 🧪 **Փորձեր** — գիտական դիտարկումներ, արդյունքներ և նկարներ
+- 🧩 **3D ստեղծագործություններ** — 3D փայտիկներով պատրաստված առարկաներ
+- 📄 **Օրիգամի** — թղթից պատրաստված ձևեր և ստեղծագործություններ
 
-        <div class="notes-grid">
-          <article class="note">
-            <span>01</span>
-            <h3>Սովորել</h3>
-            <p>Ամեն օր նոր բան եմ սովորում։ Միշտ հետաքրքիր է իմանալ ավելին։</p>
-          </article>
+## 🎨 Դիզայն
 
-          <article class="note">
-            <span>02</span>
-            <h3>Փորձել</h3>
-            <p>Ես սիրում եմ հարցեր տալ, դիտարկել և տեսնել ինչ է տեղի ունենում։</p>
-          </article>
+- ✨ Տիեզերական/գիտական թեմա գլխավոր էջում
+- 🌈 Տարբեր գունային ոճեր յուրաքանչյուր բաժնի համար
+- 📱 Պատասխանատու ձևաչափ բոլոր սարքերի համար
+- ⚡ Մակերեսային անիմացիաներ և hover էֆեկտներ
+- 🌍 Բոլորն էլ հայերեն լեզվով
 
-          <article class="note">
-            <span>03</span>
-            <h3>Ստեղծել</h3>
-            <p>Ես ուզում եմ թողնել իմ dấuքը աշխարհում՝ գրված, նկարված, ձևավորված։</p>
-          </article>
-        </div>
-      </section>
-    </main>
+## 📁 project structure
 
-    <footer class="site-footer">
-      <div class="container footer-wrap">
-        <p>© 2026 | Հայկ Հակոբյան • Իմ Լաբորատորիան</p>
-      </div>
-    </footer>
-  </body>
-</html>
+```
+h2spark/
+├── index.html              # Գլխավոր էջ
+├── css/
+│   ├── global.css          # Ընդհանուր ձևավորում
+│   ├── home.css            # Գլխավոր էջի ոճեր
+│   └── animations.css      # Անիմացիաներ
+├── pages/
+│   ├── books.html          # Գրքերի բաժին
+│   ├── experiments.html    # Փորձերի բաժին
+│   ├── 3d-creations.html  # 3D ստեղծագործությունների բաժին
+│   └── origamis.html       # Օրիգամի բաժին
+├── README.md               # Նկարագրություն
+└── .gitignore              # GitHub-ի համար
+```
 
+## 🚀 GitHub Pages
 
+Կայքը պատրաստ է GitHub Pages-ի համար։
 
+1. Repository-ը public է
+2. GitHub Pages-ը միացված է
+3. Մեջբերումներ և էջը բացվում են `main` ճյուղից
+4. Գլխավոր URL-ը՝ https://h2spark.github.io/h2spark/
 
+## 📝 Ինչպես ավելացնել բովանդակություն
 
+### Նկարներ
 
+1. Ստեղծել `assets/images/` թղթապանակ
+2. Բեռնել նկարները
+3. Փոփոխել HTML-ը՝ նոր նկարներ ավելացնելու համար
 
+### Նոր նախագծեր
 
+1. Բացել համապատասխան բաժինը
+2. Ավելացնել նոր `gallery-item`
+3. Փոխարինել էմոջին իրական նկարով
+4. Փոփոխել վերնագիրը და նկարագրությունը
 
+### Տեքստեր
 
+Բոլոր տեքստերը հայերեն են։
 
+- Բացել `.html` ֆայլը
+- Փոփոխել ցանկալի տողը
+- Պահպանել և commit անել
 
+## 🛠 Օգտագործված տեխնոլոգիաներ
 
+- HTML5
+- CSS3
+- Responsive design
+- GitHub Pages
 
+## 📄 Լիցենզիա
 
+Սա անձնական ստեղծագործական էջ է։
 
+---
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+**Ստեղծվել է Հայկ Հակոբյանի կողմից**
