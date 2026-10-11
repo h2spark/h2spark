@@ -171,10 +171,6 @@
   animation: glow 3s ease-in-out infinite;
 }
 
-.photo-badge {
-  animation: float 4s ease-in-out infinite;
-}
-
 .timeline li::before {
   animation: pulse 2.4s ease-in-out infinite;
 }
