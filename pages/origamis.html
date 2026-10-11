@@ -3,14 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>3D ստեղծագործություններ • Իմ Լաբորատորիան</title>
+    <title>Օրիգամի • Իմ Լաբորատորիան</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../css/global.css" />
-    <link rel="stylesheet" href="../css/home.css" />
+    <link rel="stylesheet" href="../css/pages.css" />
+    <link rel="stylesheet" href="../css/animations.css" />
+    <script src="../js/menu.js"></script>
   </head>
-  <body class="d3-page">
+  <body class="origami-page">
     <header class="topbar">
       <div class="container nav-wrap">
         <a class="brand" href="../index.html">
@@ -18,49 +20,55 @@
           <span>Իմ Լաբորատորիան</span>
         </a>
 
-        <nav class="main-nav" aria-label="Հիմնական նավիգացիա">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Մենյու">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+
+        <nav id="main-nav" class="main-nav" aria-label="Հիմնական նավիգացիա">
           <a href="../index.html">Գլխավոր</a>
           <a href="books.html">Գրքեր</a>
           <a href="experiments.html">Փորձեր</a>
-          <a href="3d-creations.html" class="active">3D ստեղծագործություններ</a>
-          <a href="origamis.html">Օրիգամի</a>
+          <a href="3d-creations.html">3D ստեղծագործություններ</a>
+          <a href="origamis.html" class="active">Օրիգամի</a>
         </nav>
       </div>
     </header>
 
     <main class="page-shell container">
       <section class="page-hero">
-        <p class="eyebrow">3D ստեղծագործություններ</p>
-        <h1 class="page-title">Գույների ու ձևերի աշխարհ</h1>
+        <p class="eyebrow">Օրիգամիի բաժին</p>
+        <h1 class="page-title">Թղթի կախարդանք</h1>
         <p class="page-subtitle">
-          3D փայտիկներով ու գունավոր նյութերով ես ստեղծում եմ տարբեր առարկաներ, որոնք
-          թվում են, թե կյանք են ստացել։
+          Մեկ թերթ թուղթ, մի քանի ծալք ու շատ համբերություն՝ և ահա ծնվում են իմ թղթե
+          կենդանիներն ու ծաղիկները։
         </p>
       </section>
 
       <section class="page-hero-block content-panel">
         <div class="gallery-grid">
           <figure class="gallery-item">
-            <div class="gallery-visual">🦊</div>
+            <div class="gallery-visual">🦢</div>
             <figcaption>
-              <h3>Գունավոր գազան</h3>
-              <p>3D փայտիկներով պատրաստված կենդանի կերպար, որը լցված է կյանքով։</p>
+              <h3>Թղթե կռունկ</h3>
+              <p>Ամենահայտնի օրիգամին՝ բարի երազանքների ու հույսի խորհրդանիշ։</p>
             </figcaption>
           </figure>
 
           <figure class="gallery-item">
-            <div class="gallery-visual">🚀</div>
+            <div class="gallery-visual">🐸</div>
             <figcaption>
-              <h3>Տիեզերական մեքենա</h3>
-              <p>Դպրոցական երևակայությամբ պատրաստված փոքրիկ տիեզերանավ։</p>
+              <h3>Ցատկող գորտ</h3>
+              <p>Թղթե գորտ, որն իսկապես ցատկում է, երբ մատով սեղմում եմ նրա մեջքը։</p>
             </figcaption>
           </figure>
 
           <figure class="gallery-item">
-            <div class="gallery-visual">🏠</div>
+            <div class="gallery-visual">🌸</div>
             <figcaption>
-              <h3>Փոքրիկ տուն</h3>
-              <p>Մի տուն, որը կարող է կառուցվել գույնով ու ձևով՝ իմ գաղափարով։</p>
+              <h3>Թղթե ծաղիկ</h3>
+              <p>Գունավոր թղթից ծալված ծաղիկ, որը երբեք չի թառամում։</p>
             </figcaption>
           </figure>
         </div>
@@ -69,17 +77,8 @@
 
     <footer class="site-footer">
       <div class="container footer-wrap">
-        <p>© 2026 | Հեյք Հակոբյան • Իմ Լաբորատորիան</p>
+        <p>© 2026 | Հայկ Հակոբյան • Իմ Լաբորատորիան</p>
       </div>
     </footer>
   </body>
 </html>
-
-
-
-
-
-
-
-
-

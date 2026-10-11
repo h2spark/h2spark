@@ -133,23 +133,34 @@
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
-.button:hover {
-  transform: translateY(-3px) scale(1.02);
-}
-
-.button.primary:hover {
-  box-shadow: 0 24px 48px rgba(125, 211, 252, 0.42);
-}
-
-.category-card:hover .icon {
-  animation: float 1s ease-in-out infinite;
-}
-
 .gallery-visual {
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-.gallery-item:hover .gallery-visual {
-  transform: scale(1.1) rotate(5deg);
-  filter: brightness(1.2);
+/* Hover effects only for mouse users; on touch screens they stick after a tap */
+@media (hover: hover) {
+  .button:hover {
+    transform: translateY(-3px) scale(1.02);
+  }
+
+  .button.primary:hover {
+    box-shadow: 0 24px 48px rgba(125, 211, 252, 0.42);
+  }
+
+  .category-card:hover .icon {
+    animation: float 1s ease-in-out infinite;
+  }
+
+  .gallery-item:hover .gallery-visual {
+    transform: scale(1.1) rotate(5deg);
+    filter: brightness(1.2);
+  }
+}
+
+/* Phones and tablets: slide in from below, so nothing pokes out sideways */
+@media (max-width: 899.98px) {
+  .hero-copy,
+  .hero-visual {
+    animation-name: slideInUp;
+  }
 }

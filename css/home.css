@@ -4,7 +4,6 @@
     radial-gradient(circle at bottom right, rgba(196, 181, 253, 0.18), transparent 30%),
     linear-gradient(180deg, #090d1a 0%, #0f172a 100%);
   position: relative;
-  overflow: hidden;
 }
 
 .home-page::before {
@@ -28,14 +27,19 @@ main {
 
 .hero {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
   gap: 48px;
   align-items: center;
   padding: 70px 0 40px;
 }
 
-.eyebrow {
-  font-weight: 700;
+/* The big title grows with its own column, so long words never break */
+.hero-copy {
+  container-type: inline-size;
+}
+
+.hero-copy h1 {
+  font-size: clamp(1.5rem, 8.8cqi, 4.5rem);
 }
 
 .hero-copy .subtitle {
@@ -65,8 +69,8 @@ main {
 }
 
 .planet {
-  width: 270px;
-  height: 270px;
+  width: clamp(150px, 45vw, 270px);
+  aspect-ratio: 1;
   border-radius: 50%;
   background: radial-gradient(circle at 30% 30%, #fef3c7 0%, #e0f2fe 16%, #7dd3fc 35%, #a78bfa 70%, #1f2937 100%);
   box-shadow: 0 0 0 18px rgba(125, 211, 252, 0.12), 0 0 80px rgba(167, 139, 250, 0.38);
@@ -116,6 +120,7 @@ main {
   border: 1px solid rgba(255, 255, 255, 0.12);
   background: rgba(12, 16, 30, 0.8);
   border-radius: 18px;
+  -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   box-shadow: 0 8px 32px rgba(15, 23, 42, 0.6);
 }
@@ -143,7 +148,7 @@ main {
 
 .feature-card {
   display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
   gap: 28px;
   padding: 24px;
   border: 1px solid var(--border);
@@ -151,11 +156,6 @@ main {
   background: rgba(15, 23, 42, 0.82);
   box-shadow: var(--shadow);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.feature-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 32px 80px rgba(125, 211, 252, 0.25);
 }
 
 .book-cover {
@@ -229,15 +229,11 @@ main {
   transition: all 0.2s ease;
 }
 
-.feature-content li:hover {
-  background: rgba(125, 211, 252, 0.24);
-  border-color: rgba(125, 211, 252, 0.4);
-}
-
+/* Sections: 1 column on phones, 2×2 from tablets up ("ստեղծագործություններ" is too long for 4 columns) */
 .category-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 22px;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
 }
 
 .category-card {
@@ -260,12 +256,6 @@ main {
   inset: 0;
   background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.05) 100%);
   pointer-events: none;
-}
-
-.category-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 32px 80px rgba(15, 23, 42, 0.8);
 }
 
 .category-card .icon {
@@ -304,8 +294,8 @@ main {
 
 .notes-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 22px;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
 }
 
 .note {
@@ -326,16 +316,6 @@ main {
   opacity: 0;
   transition: opacity 0.2s ease;
   pointer-events: none;
-}
-
-.note:hover {
-  transform: translateY(-4px);
-  border-color: var(--accent);
-  box-shadow: 0 16px 40px rgba(125, 211, 252, 0.15);
-}
-
-.note:hover::before {
-  opacity: 1;
 }
 
 .note span {
@@ -361,13 +341,153 @@ main {
   z-index: 1;
 }
 
-@media (max-width: 820px) {
+/* Hover effects only for mouse users; on touch screens they stick after a tap */
+@media (hover: hover) {
+  .feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 32px 80px rgba(125, 211, 252, 0.25);
+  }
+
+  .feature-content li:hover {
+    background: rgba(125, 211, 252, 0.24);
+    border-color: rgba(125, 211, 252, 0.4);
+  }
+
+  .category-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 32px 80px rgba(15, 23, 42, 0.8);
+  }
+
+  .note:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+    box-shadow: 0 16px 40px rgba(125, 211, 252, 0.15);
+  }
+
+  .note:hover::before {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 600px) {
+  .category-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+}
+
+@media (min-width: 700px) {
+  .notes-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .category-grid {
+    gap: 22px;
+  }
+
+  .notes-grid {
+    gap: 22px;
+  }
+}
+
+/* Tablets and phones: one column, the planet goes under the text */
+@media (max-width: 899.98px) {
   .hero,
   .feature-card {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .hero {
+    gap: 32px;
     padding-top: 48px;
+  }
+
+  .hero-visual {
+    min-height: 340px;
+  }
+
+  .book-cover {
+    min-height: 260px;
+  }
+}
+
+/* Phones */
+@media (max-width: 599.98px) {
+  .hero {
+    gap: 24px;
+    padding: 28px 0 16px;
+  }
+
+  .hero-copy .subtitle {
+    font-size: 1rem;
+    margin-bottom: 24px;
+  }
+
+  .hero-actions {
+    gap: 12px;
+  }
+
+  .hero-actions .button {
+    flex: 1 1 100%;
+  }
+
+  .hero-visual {
+    min-height: 280px;
+    border-radius: var(--radius);
+  }
+
+  .planet {
+    box-shadow: 0 0 0 12px rgba(125, 211, 252, 0.12), 0 0 60px rgba(167, 139, 250, 0.38);
+  }
+
+  .lab-card {
+    right: 14px;
+    bottom: 14px;
+    min-width: 0;
+    gap: 6px;
+    padding: 12px 14px;
+    border-radius: 14px;
+  }
+
+  .lab-card strong {
+    font-size: 1.05rem;
+  }
+
+  .featured,
+  .categories,
+  .lab-notes {
+    padding-top: 32px;
+  }
+
+  .feature-card {
+    gap: 20px;
+    padding: 14px;
+  }
+
+  .book-cover {
+    min-height: 200px;
+    padding: 20px;
+    border-radius: 18px;
+  }
+
+  .category-card {
+    min-height: 0;
+    padding: 20px 18px;
+  }
+
+  .category-card h3 {
+    font-size: 1.15rem;
+  }
+
+  .note {
+    padding: 20px 18px;
+  }
+
+  .note span {
+    margin-bottom: 10px;
   }
 }

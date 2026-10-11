@@ -1,152 +1,84 @@
-body {
-  background:
-    radial-gradient(circle at top left, rgba(125, 211, 252, 0.12), transparent 28%),
-    linear-gradient(180deg, #120d1b 0%, #101827 100%);
-}
+<!DOCTYPE html>
+<html lang="hy">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Գրքեր • Իմ Լաբորատորիան</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/pages.css" />
+    <link rel="stylesheet" href="../css/animations.css" />
+    <script src="../js/menu.js"></script>
+  </head>
+  <body class="books-page">
+    <header class="topbar">
+      <div class="container nav-wrap">
+        <a class="brand" href="../index.html">
+          <span class="brand-mark">⚗️</span>
+          <span>Իմ Լաբորատորիան</span>
+        </a>
 
-.page-shell {
-  padding-top: 54px;
-}
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Մենյու">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
 
-.page-hero {
-  margin-bottom: 26px;
-}
+        <nav id="main-nav" class="main-nav" aria-label="Հիմնական նավիգացիա">
+          <a href="../index.html">Գլխավոր</a>
+          <a href="books.html" class="active">Գրքեր</a>
+          <a href="experiments.html">Փորձեր</a>
+          <a href="3d-creations.html">3D ստեղծագործություններ</a>
+          <a href="origamis.html">Օրիգամի</a>
+        </nav>
+      </div>
+    </header>
 
-.page-title {
-  margin-bottom: 12px;
-}
+    <main class="page-shell container">
+      <section class="page-hero">
+        <p class="eyebrow">Գրքերի բաժին</p>
+        <h1 class="page-title">Պատմությունների աշխարհ</h1>
+        <p class="page-subtitle">
+          Այստեղ ես կտեղադրեմ իմ պատմությունները, արկածները, հեքիաթները և բոլոր այն գրված
+          ստեղծագործությունները, որոնք ծնվում են իմ երևակայությունից։
+        </p>
+      </section>
 
-.page-subtitle {
-  max-width: 800px;
-}
+      <section class="page-hero-block content-panel">
+        <div class="gallery-grid">
+          <figure class="gallery-item">
+            <div class="gallery-visual">📚</div>
+            <figcaption>
+              <h3>Արկածասեր Տիգրանը</h3>
+              <p>Իմ առաջին հայերեն գիրքը՝ արկածային, խենթ, հետաքրքիր ու ոգեշնչող պատմություն։</p>
+            </figcaption>
+          </figure>
 
-.category-layout {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 22px;
-}
+          <figure class="gallery-item">
+            <div class="gallery-visual">🌙</div>
+            <figcaption>
+              <h3>Գիշերային թաքնված ճանապարհ</h3>
+              <p>Վախ, սիրո, հույսի ու մի փոքր կախարդական ճամփորդություն։</p>
+            </figcaption>
+          </figure>
 
-.category-card.page-card {
-  min-height: 260px;
-  padding: 22px;
-}
+          <figure class="gallery-item">
+            <div class="gallery-visual">🗺️</div>
+            <figcaption>
+              <h3>Լաբորատորիայի գաղտնիքը</h3>
+              <p>Երբ մտքի մեջ հայտնվում է անհայտը, և մի փոքր արկած սկսում է վազել։</p>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+    </main>
 
-.page-card .icon {
-  font-size: 2.5rem;
-}
-
-.books-page {
-  background: linear-gradient(180deg, #0f172a 0%, #1e1b4b 100%);
-}
-
-.books-page .page-title, .books-page .eyebrow {
-  color: #dbeafe;
-}
-
-.books-page .category-card.page-card {
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.18), rgba(59, 130, 246, 0.12));
-}
-
-.experiments-page {
-  background: linear-gradient(180deg, #07151a 0%, #10232b 100%);
-}
-
-.experiments-page .page-title, .experiments-page .eyebrow {
-  color: #bbf7d0;
-}
-
-.experiments-page .category-card.page-card {
-  background: linear-gradient(135deg, rgba(16, 185, 129, 0.14), rgba(14, 165, 233, 0.14));
-}
-
-.d3-page {
-  background: linear-gradient(180deg, #1f102c 0%, #2a1244 100%);
-}
-
-.d3-page .page-title, .d3-page .eyebrow {
-  color: #f3d3ff;
-}
-
-.d3-page .category-card.page-card {
-  background: linear-gradient(135deg, rgba(236, 72, 153, 0.18), rgba(99, 102, 241, 0.12));
-}
-
-.origami-page {
-  background: linear-gradient(180deg, #1a1d1f 0%, #1b2e2a 100%);
-}
-
-.origami-page .page-title, .origami-page .eyebrow {
-  color: #fef3c7;
-}
-
-.origami-page .category-card.page-card {
-  background: linear-gradient(135deg, rgba(245, 158, 11, 0.18), rgba(34, 197, 94, 0.14));
-}
-
-.page-topbar {
-  color: inherit;
-}
-
-.page-hero-block {
-  padding: 24px 22px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: rgba(15, 23, 42, 0.7);
-  box-shadow: var(--shadow);
-}
-
-.gallery-item .gallery-visual {
-  background: linear-gradient(135deg, rgba(125, 211, 252, 0.22), rgba(167, 139, 250, 0.18));
-}
-
-.books-page .gallery-item .gallery-visual {
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.26), rgba(96, 165, 250, 0.14));
-}
-
-.experiments-page .gallery-item .gallery-visual {
-  background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(14, 165, 233, 0.16));
-}
-
-.d3-page .gallery-item .gallery-visual {
-  background: linear-gradient(135deg, rgba(244, 114, 182, 0.24), rgba(168, 85, 247, 0.16));
-}
-
-.origami-page .gallery-item .gallery-visual {
-  background: linear-gradient(135deg, rgba(251, 191, 36, 0.2), rgba(134, 239, 172, 0.15));
-}
-
-@media (max-width: 640px) {
-  .page-shell {
-    padding-top: 38px;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p>© 2026 | Հայկ Հակոբյան • Իմ Լաբորատորիան</p>
+      </div>
+    </footer>
+  </body>
+</html>

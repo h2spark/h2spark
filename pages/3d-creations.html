@@ -3,14 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Փորձեր • Իմ Լաբորատորիան</title>
+    <title>3D ստեղծագործություններ • Իմ Լաբորատորիան</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../css/global.css" />
-    <link rel="stylesheet" href="../css/home.css" />
+    <link rel="stylesheet" href="../css/pages.css" />
+    <link rel="stylesheet" href="../css/animations.css" />
+    <script src="../js/menu.js"></script>
   </head>
-  <body class="experiments-page">
+  <body class="d3-page">
     <header class="topbar">
       <div class="container nav-wrap">
         <a class="brand" href="../index.html">
@@ -18,11 +20,17 @@
           <span>Իմ Լաբորատորիան</span>
         </a>
 
-        <nav class="main-nav" aria-label="Հիմնական նավիգացիա">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Մենյու">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+
+        <nav id="main-nav" class="main-nav" aria-label="Հիմնական նավիգացիա">
           <a href="../index.html">Գլխավոր</a>
           <a href="books.html">Գրքեր</a>
-          <a href="experiments.html" class="active">Փորձեր</a>
-          <a href="3d-creations.html">3D ստեղծագործություններ</a>
+          <a href="experiments.html">Փորձեր</a>
+          <a href="3d-creations.html" class="active">3D ստեղծագործություններ</a>
           <a href="origamis.html">Օրիգամի</a>
         </nav>
       </div>
@@ -30,37 +38,37 @@
 
     <main class="page-shell container">
       <section class="page-hero">
-        <p class="eyebrow">Փորձերի բաժին</p>
-        <h1 class="page-title">Սովորելու, դիտարկելու և բացահայտելու</h1>
+        <p class="eyebrow">3D ստեղծագործություններ</p>
+        <h1 class="page-title">Գույների ու ձևերի աշխարհ</h1>
         <p class="page-subtitle">
-          Ես սիրում եմ դիտարկել, հարցեր տալ, փորձեր անել և տեսնել՝ ինչ է տեղի ունենում։
-          Գիտության մեջ ամեն ինչ սկսվում է հարգանքով, հետաքրքրությամբ և փոքրիկ բացահայտումներով։
+          3D փայտիկներով ու գունավոր նյութերով ես ստեղծում եմ տարբեր առարկաներ, որոնք
+          թվում են, թե կյանք են ստացել։
         </p>
       </section>
 
       <section class="page-hero-block content-panel">
         <div class="gallery-grid">
           <figure class="gallery-item">
-            <div class="gallery-visual">🧪</div>
+            <div class="gallery-visual">🦊</div>
             <figcaption>
-              <h3>Ջրի գույնը</h3>
-              <p>Ջրի մեջ տարբեր նյութեր ավելացնելով՝ դիտարկել, թե ինչպես են փոփոխվում գույնը և ձևը։</p>
+              <h3>Գունավոր գազան</h3>
+              <p>3D փայտիկներով պատրաստված կենդանի կերպար, որը լցված է կյանքով։</p>
             </figcaption>
           </figure>
 
           <figure class="gallery-item">
-            <div class="gallery-visual">🌱</div>
+            <div class="gallery-visual">🚀</div>
             <figcaption>
-              <h3>Սերմերի ուժ</h3>
-              <p>Սերմերի աճը տարբեր պայմաններում՝ ջուր, լույս, և՛ առանց, և՛ առկայությամբ։</p>
+              <h3>Տիեզերական մեքենա</h3>
+              <p>Դպրոցական երևակայությամբ պատրաստված փոքրիկ տիեզերանավ։</p>
             </figcaption>
           </figure>
 
           <figure class="gallery-item">
-            <div class="gallery-visual">🔬</div>
+            <div class="gallery-visual">🏠</div>
             <figcaption>
-              <h3>Գիտական դիտարկում</h3>
-              <p>Թղթի, հեղուկի, լույսի և ձևի փոխազդեցությունները՝ իմ փոքրիկ լաբորատորությունում։</p>
+              <h3>Փոքրիկ տուն</h3>
+              <p>Մի տուն, որը կարող է կառուցվել գույնով ու ձևով՝ իմ գաղափարով։</p>
             </figcaption>
           </figure>
         </div>
@@ -69,25 +77,8 @@
 
     <footer class="site-footer">
       <div class="container footer-wrap">
-        <p>© 2026 | Հեյք Հակոբյան • Իմ Լաբորատորիան</p>
+        <p>© 2026 | Հայկ Հակոբյան • Իմ Լաբորատորիան</p>
       </div>
     </footer>
   </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
