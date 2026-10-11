@@ -1,118 +1,291 @@
-# 🧪 Իմ Լաբորատորիան (My Creative Laboratory)
+<!DOCTYPE html>
+<html lang="hy">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Իմ Լաբորատորիան</title>
+    <meta
+      name="description"
+      content="Հայկ Հակոբյանի ստեղծագործական լաբորատորիան՝ գրքեր, փորձեր, 3D ստեղծագործություններ և օրիգամի"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/home.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+  </head>
+  <body class="home-page">
+    <header class="topbar">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">⚗️</span>
+          <span>Իմ Լաբորատորիան</span>
+        </a>
 
-Hayk's Creative Laboratory - A personal portfolio showcasing books, experiments, 3D creations, and origami.
+        <nav class="main-nav" aria-label="Հիմնական նավիգացիա">
+          <a href="index.html" class="active">Գլխավոր</a>
+          <a href="pages/books.html">Գրքեր</a>
+          <a href="pages/experiments.html">Փորձեր</a>
+          <a href="pages/3d-creations.html">3D ստեղծագործություններ</a>
+          <a href="pages/origamis.html">Օրիգամի</a>
+        </nav>
+      </div>
+    </header>
 
-🌐 **Live Site**: https://h2spark.github.io/hayk-laboratory
+    <main>
+      <section class="hero container">
+        <div class="hero-copy">
+          <p class="eyebrow">Հայկ Հակոբյան • Սովորում եմ ու ստեղծում</p>
+          <h1>Ստեղծագործության նոր աշխարհ</h1>
+          <p class="subtitle">
+            Այստեղ ես հավաքում եմ իմ պատմությունները, փորձերը, 3D ստեղծագործությունները, օրիգամին և
+            այն ամենը, ինչ ծնվում է իմ երևակայությունից։
+          </p>
 
-## 📋 About
+          <div class="hero-actions">
+            <a class="button primary" href="pages/books.html">Տեսնել գրքերը</a>
+            <a class="button secondary" href="pages/experiments.html">Տեսնել փորձերը</a>
+          </div>
+        </div>
 
-This is a creative portfolio website for Hayk Hakobyan, showcasing:
+        <div class="hero-visual" aria-label="Ստեղծագործական լաբորատորիայի պատկեր">
+          <div class="planet"></div>
+          <div class="orb orb-one"></div>
+          <div class="orb orb-two"></div>
+          <div class="lab-card">
+            <span class="lab-tag">Սկսած 2026-ից</span>
+            <strong>Արկածասեր Տիգրանը</strong>
+            <small>Իմ առաջին մեծ արկածը</small>
+          </div>
+        </div>
+      </section>
 
-- 📖 **Գրքեր (Books)** - Stories and adventures like "Արկածասեր Տիգրանը" (Tigran the Adventurer)
-- 🧪 **Փորձեր (Experiments)** - Scientific experiments and discoveries
-- 🧩 **3D ստեղծագործություններ (3D Creations)** - 3D pen art and models
-- 📄 **Օրիգամի (Origami)** - Paper folding creations
+      <section class="featured container">
+        <div class="section-heading">
+          <p class="eyebrow">Առանձնահատուկ ստեղծագործություն</p>
+          <h2>Գիրք՝ «Արկածասեր Տիգրանը»</h2>
+        </div>
 
-## 🎨 Design Features
+        <div class="feature-card">
+          <div class="book-cover">
+            <span class="cover-label">Գիրք</span>
+            <h3>Արկածասեր Տիգրանը</h3>
+          </div>
 
-- ✨ Space/Sci-fi themed homepage with animated visuals
-- 🌈 Unique color schemes for each category (mysterious for books, scientific for experiments, playful for 3D and origami)
-- 📱 Fully responsive design for all devices
-- ⚡ Smooth animations and interactive elements
-- 🌍 Fully in Armenian language
+          <div class="feature-content">
+            <p>
+              Սա իմ առաջին մեծ արկածային պատմությունն է։ Այն լի է հետաքրքիր ճամփորդություններով,
+              բարդ իրավիճակներով, բայց նաև սիրով, մղումով և երևակայությամբ։ Ես ուզում եմ, որ այս
+              գիրքը լինի իմ առաջին քայլը դեպի ավելի մեծ ստեղծագործություններ։
+            </p>
+            <ul>
+              <li>Արկածներ</li>
+              <li>Հերոս</li>
+              <li>Ճամփորդություն</li>
+            </ul>
+            <a class="button primary" href="pages/books.html">Կարդալ ավելին</a>
+          </div>
+        </div>
+      </section>
 
-## 📁 Project Structure
+      <section class="categories container">
+        <div class="section-heading">
+          <p class="eyebrow">Իմ լաբորատորիայի բաժինները</p>
+          <h2>Բոլորն ու երևակայությունը մի տեղում</h2>
+        </div>
 
-```
-hayk-laboratory/
-├── index.html              # Homepage
-├── css/
-│   ├── global.css         # Global styles and layout
-│   ├── home.css           # Homepage specific styles
-│   └── animations.css     # Animations and transitions
-├── pages/
-│   ├── books.html         # Books section
-│   ├── experiments.html   # Experiments section
-│   ├── 3d-creations.html  # 3D creations section
-│   └── origamis.html      # Origami section
-└── README.md              # This file
-```
+        <div class="category-grid">
+          <a class="category-card books" href="pages/books.html">
+            <span class="icon">📖</span>
+            <h3>Գրքեր</h3>
+            <p>Պատմություններ, արկածներ և նոր աշխարհներ իմ երևակայությունից։</p>
+          </a>
 
-## 🚀 How to Deploy
+          <a class="category-card experiments" href="pages/experiments.html">
+            <span class="icon">🧪</span>
+            <h3>Փորձեր</h3>
+            <p>Գիտական հետաքրքրություն, դիտարկումներ, նկարներ և արդյունքներ։</p>
+          </a>
 
-This site is already configured for GitHub Pages:
+          <a class="category-card d3" href="pages/3d-creations.html">
+            <span class="icon">🧩</span>
+            <h3>3D ստեղծագործություններ</h3>
+            <p>3D գծագրեր, ձևեր, առարկաներ և ստեղծված միրգեր ու կենդանիներ։</p>
+          </a>
 
-1. The repository is public
-2. GitHub Pages is enabled on the `main` branch
-3. Visit: https://h2spark.github.io/hayk-laboratory
+          <a class="category-card origami" href="pages/origamis.html">
+            <span class="icon">📄</span>
+            <h3>Օրիգամի</h3>
+            <p>Թղթից արարածներ, ծաղիկներ, ձևեր և վառ երևակայություն։</p>
+          </a>
+        </div>
+      </section>
 
-To make changes:
-1. Edit files in the GitHub repository
-2. Commit changes to `main` branch
-3. Changes deploy automatically within minutes
+      <section class="lab-notes container">
+        <div class="section-heading">
+          <p class="eyebrow">Իմ մեթոդը</p>
+          <h2>Սովորում եմ, փորձում եմ, ստեղծում եմ</h2>
+        </div>
 
-## 📝 How to Add Your Own Content
+        <div class="notes-grid">
+          <article class="note">
+            <span>01</span>
+            <h3>Սովորել</h3>
+            <p>Ամեն օր նոր բան եմ սովորում։ Միշտ հետաքրքիր է իմանալ ավելին։</p>
+          </article>
 
-### Adding Images
+          <article class="note">
+            <span>02</span>
+            <h3>Փորձել</h3>
+            <p>Ես սիրում եմ հարցեր տալ, դիտարկել և տեսնել ինչ է տեղի ունենում։</p>
+          </article>
 
-1. Create an `assets/images/` folder in the repository
-2. Upload your photos and creations
-3. Update the gallery HTML to reference your images
+          <article class="note">
+            <span>03</span>
+            <h3>Ստեղծել</h3>
+            <p>Ես ուզում եմ թողնել իմ dấuքը աշխարհում՝ գրված, նկարված, ձևավորված։</p>
+          </article>
+        </div>
+      </section>
+    </main>
 
-### Adding New Projects
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p>© 2026 | Հայկ Հակոբյան • Իմ Լաբորատորիան</p>
+      </div>
+    </footer>
+  </body>
+</html>
 
-1. Open the relevant category page (e.g., `pages/books.html`)
-2. Add a new `<figure class="gallery-item">` element
-3. Replace the emoji placeholder with your image
-4. Update title and description
 
-### Customizing Text
 
-All content is in Armenian. To edit:
-1. Open any `.html` file
-2. Find the text you want to change
-3. Edit it directly
-4. Save and commit
 
-## 🛠 Technologies Used
 
-- HTML5
-- CSS3 (with animations and gradients)
-- Responsive Design
-- GitHub Pages
 
-## 📱 Browser Support
 
-- Chrome/Chromium (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
 
-## ✨ Features
 
-- Smooth animations on page load
-- Floating and glowing effects on hero section
-- Hover animations on cards
-- Responsive grid layouts
-- Gradient backgrounds
-- Mobile-friendly navigation
 
-## 🎯 Next Steps
 
-Future enhancements could include:
 
-- [ ] About Me section
-- [ ] Contact form
-- [ ] Blog for experiments and discoveries
-- [ ] Video gallery support
-- [ ] Dark/Light mode toggle
-- [ ] More interactive features
-- [ ] Social media links
 
-## 📄 License
 
-This is a personal portfolio. Feel free to use as inspiration for your own projects.
 
----
 
-**Created with ❤️ by Hayk Hakobyan**
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
