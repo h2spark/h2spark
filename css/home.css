@@ -33,6 +33,47 @@ main {
   padding: 70px 0 40px;
 }
 
+/* Author chip at the top of the hero: a small photo that links to the About page */
+.author-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 100%;
+  margin-bottom: 20px;
+  padding: 6px 8px 6px 6px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.author-avatar {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 0 2px var(--accent-2);
+}
+
+.author-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+  line-height: 1.2;
+}
+
+.author-text strong {
+  font-size: 0.95rem;
+}
+
+.author-text small {
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
 /* The big title grows with its own column, so long words never break */
 .hero-copy {
   container-type: inline-size;
@@ -127,17 +168,12 @@ main {
 
 .lab-tag {
   color: var(--accent);
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
+  font-size: 0.85rem;
+  font-weight: 500;
 }
 
 .lab-card strong {
   font-size: 1.2rem;
-}
-
-.lab-card small {
-  color: var(--muted);
 }
 
 .featured,
@@ -159,16 +195,22 @@ main {
 }
 
 .book-cover {
-  min-height: 320px;
-  border-radius: 24px;
+  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  gap: 12px;
-  padding: 24px;
-  background: linear-gradient(135deg, rgba(167, 139, 250, 0.92), rgba(59, 130, 246, 0.8), rgba(15, 23, 42, 0.8));
+  justify-content: space-between;
+  gap: 16px;
+  justify-self: center;
+  width: min(100%, 300px);
+  aspect-ratio: 3 / 4;
+  padding: 28px 24px 24px 40px;
   border: 1px solid rgba(255, 255, 255, 0.18);
-  position: relative;
+  border-radius: 6px 20px 20px 6px;
+  background: linear-gradient(135deg, rgba(167, 139, 250, 0.92), rgba(59, 130, 246, 0.8), rgba(15, 23, 42, 0.8));
+  box-shadow:
+    inset 14px 0 0 rgba(15, 23, 42, 0.28),
+    inset 16px 0 0 rgba(255, 255, 255, 0.14),
+    0 24px 50px rgba(15, 23, 42, 0.55);
   overflow: hidden;
 }
 
@@ -180,24 +222,20 @@ main {
   pointer-events: none;
 }
 
-.cover-label {
-  display: inline-flex;
-  align-self: flex-start;
-  padding: 8px 12px;
-  border-radius: 999px;
-  background: rgba(15, 23, 42, 0.25);
-  font-size: 0.76rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+.cover-author {
   position: relative;
   z-index: 1;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.95rem;
+  font-weight: 500;
 }
 
 .book-cover h3 {
-  font-size: clamp(2rem, 3vw, 3rem);
-  line-height: 1.1;
   position: relative;
   z-index: 1;
+  font-size: clamp(1.6rem, 1.2rem + 1.6vw, 2.1rem);
+  font-weight: 800;
+  line-height: 1.15;
 }
 
 .feature-content {
@@ -212,21 +250,38 @@ main {
   margin-bottom: 18px;
 }
 
-.feature-content ul {
+.feature-tags {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px 22px;
   margin: 0 0 26px;
 }
 
-.feature-content li {
-  padding: 8px 12px;
-  border-radius: 999px;
-  background: rgba(125, 211, 252, 0.12);
-  color: var(--text);
-  border: 1px solid rgba(125, 211, 252, 0.2);
-  transition: all 0.2s ease;
+.feature-tags li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+.feature-tags li::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 10px var(--accent);
+}
+
+.feature-tags li:nth-child(3n + 2)::before {
+  background: var(--accent-2);
+  box-shadow: 0 0 10px var(--accent-2);
+}
+
+.feature-tags li:nth-child(3n)::before {
+  background: var(--accent-3);
+  box-shadow: 0 0 10px var(--accent-3);
 }
 
 /* Sections: 1 column on phones, 2×2 from tablets up ("ստեղծագործություններ" is too long for 4 columns) */
@@ -259,9 +314,32 @@ main {
 }
 
 .category-card .icon {
-  font-size: 2.4rem;
+  position: absolute;
+  right: -6px;
+  bottom: -14px;
+  font-size: 6rem;
+  line-height: 1;
+  opacity: 0.22;
+  rotate: -12deg;
+  pointer-events: none;
+}
+
+.category-card .card-status {
   position: relative;
   z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.category-card .card-status::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
 }
 
 .category-card p {
@@ -274,6 +352,8 @@ main {
 .category-card h3 {
   position: relative;
   z-index: 1;
+  margin-top: auto;
+  font-size: clamp(1.15rem, 0.9rem + 0.8vw, 1.5rem);
 }
 
 .category-card.books {
@@ -293,191 +373,78 @@ main {
 }
 
 .notes-grid {
+  position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  gap: 16px;
+  gap: 26px;
+}
+
+/* The line that connects the orbs: down the side on phones, across on wider screens */
+.notes-grid::before {
+  content: '';
+  position: absolute;
+  top: 12px;
+  bottom: 12px;
+  left: 14px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--accent), var(--accent-2), var(--accent-3) 75%, transparent);
+  opacity: 0.45;
 }
 
 .note {
-  padding: 24px 22px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: rgba(15, 23, 42, 0.72);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  --orb: var(--accent);
   position: relative;
-  overflow: hidden;
+  padding: 0 4px 0 44px;
+  transition: transform 0.2s ease;
 }
 
-.note::before {
-  content: '';
+.note.try {
+  --orb: var(--accent-2);
+}
+
+.note.create {
+  --orb: var(--accent-3);
+}
+
+.note-orb {
   position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(125, 211, 252, 0.1) 0%, transparent 100%);
-  opacity: 0;
-  transition: opacity 0.2s ease;
-  pointer-events: none;
+  top: 2px;
+  left: 4px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #ffffff 0%, var(--orb) 45%, transparent 75%);
+  box-shadow: 0 0 18px var(--orb);
 }
 
-.note span {
-  display: inline-flex;
-  margin-bottom: 18px;
+.motto .learn {
   color: var(--accent);
-  font-weight: 800;
-  font-size: 1.3rem;
-  position: relative;
-  z-index: 1;
 }
 
-.note h3 {
-  position: relative;
-  z-index: 1;
+.motto .try {
+  color: var(--accent-2);
+}
+
+.motto .create {
+  color: var(--accent-3);
 }
 
 .note p {
-  margin-top: 10px;
   color: var(--muted);
   line-height: 1.7;
-  position: relative;
-  z-index: 1;
-}
-
-/* About me: Hayk's photo and a short bio that grows over time */
-.about {
-  padding-top: 44px;
-}
-
-.about-card {
-  display: grid;
-  grid-template-columns: minmax(0, 380px) minmax(0, 1fr);
-  gap: 40px;
-  align-items: center;
-  padding: 24px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: rgba(15, 23, 42, 0.82);
-  box-shadow: var(--shadow);
-}
-
-.photo-frame {
-  position: relative;
-  padding: 6px;
-  border-radius: 26px;
-  background: linear-gradient(135deg, var(--accent), var(--accent-2), var(--accent-3));
-  transition: transform 0.3s ease;
-}
-
-/* The whole photo is shown (no cropping), so Hayk's brother on the right always stays visible */
-.photo-frame img {
-  width: 100%;
-  height: auto;
-  border-radius: 20px;
-}
-
-.photo-badge {
-  position: absolute;
-  top: 18px;
-  left: 18px;
-  padding: 8px 12px;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: 999px;
-  background: rgba(12, 16, 30, 0.78);
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
-  font-size: 0.85rem;
-  font-weight: 700;
-}
-
-.about-photo figcaption {
-  margin-top: 14px;
-  color: var(--muted);
-  font-size: 0.92rem;
-  line-height: 1.5;
-  text-align: center;
-}
-
-.about-text {
-  margin: 16px 0 26px;
-  color: var(--muted);
-  line-height: 1.8;
-}
-
-.about-subtitle {
-  margin-bottom: 12px;
-  font-size: 1.1rem;
-}
-
-.about-tags {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 26px;
-}
-
-.about-tags li {
-  padding: 8px 12px;
-  border: 1px solid rgba(167, 139, 250, 0.28);
-  border-radius: 999px;
-  background: rgba(167, 139, 250, 0.12);
-  transition: all 0.2s ease;
-}
-
-.timeline {
-  list-style: none;
-  display: grid;
-  gap: 14px;
-  padding-left: 22px;
-  border-left: 2px solid rgba(125, 211, 252, 0.3);
-}
-
-.timeline li {
-  position: relative;
-}
-
-.timeline li::before {
-  content: '';
-  position: absolute;
-  top: 4px;
-  left: -29px;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  box-shadow: 0 0 0 4px rgba(125, 211, 252, 0.15);
-}
-
-.timeline-year {
-  display: block;
-  margin-bottom: 2px;
-  color: var(--accent);
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-}
-
-.timeline p {
-  line-height: 1.6;
 }
 
 /* Hover effects only for mouse users; on touch screens they stick after a tap */
 @media (hover: hover) {
-  .photo-frame:hover {
-    transform: translateY(-4px) rotate(-1deg);
-  }
-
-  .about-tags li:hover {
-    background: rgba(167, 139, 250, 0.24);
-    border-color: rgba(167, 139, 250, 0.45);
+  .author-chip:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.08);
   }
 
   .feature-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 32px 80px rgba(125, 211, 252, 0.25);
-  }
-
-  .feature-content li:hover {
-    background: rgba(125, 211, 252, 0.24);
-    border-color: rgba(125, 211, 252, 0.4);
   }
 
   .category-card:hover {
@@ -488,16 +455,11 @@ main {
 
   .note:hover {
     transform: translateY(-4px);
-    border-color: var(--accent);
-    box-shadow: 0 16px 40px rgba(125, 211, 252, 0.15);
   }
 
-  .note:hover::before {
-    opacity: 1;
-  }
 }
 
-@media (min-width: 600px) {
+@media (min-width: 768px) {
   .category-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 20px;
@@ -507,16 +469,26 @@ main {
 @media (min-width: 700px) {
   .notes-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 20px;
+    gap: 28px;
+  }
+
+  .notes-grid::before {
+    top: 13px;
+    bottom: auto;
+    left: 15px;
+    right: 15px;
+    width: auto;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2), var(--accent-3));
+  }
+
+  .note {
+    padding: 44px 8px 0 0;
   }
 }
 
 @media (min-width: 1000px) {
   .category-grid {
-    gap: 22px;
-  }
-
-  .notes-grid {
     gap: 22px;
   }
 }
@@ -536,36 +508,10 @@ main {
   .hero-visual {
     min-height: 340px;
   }
-
-  .about-card {
-    grid-template-columns: minmax(0, 300px) minmax(0, 1fr);
-    gap: 28px;
-  }
-
-  .book-cover {
-    min-height: 260px;
-  }
-}
-
-/* Small tablets and phones: photo on top, bio underneath */
-@media (max-width: 699.98px) {
-  .about-card {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 24px;
-  }
-
-  .about-photo {
-    width: min(100%, 360px);
-    margin: 0 auto;
-  }
 }
 
 /* Phones */
 @media (max-width: 599.98px) {
-  .about-card {
-    padding: 14px 14px 20px;
-  }
-
   .hero {
     gap: 24px;
     padding: 28px 0 16px;
@@ -608,8 +554,7 @@ main {
 
   .featured,
   .categories,
-  .lab-notes,
-  .about {
+  .lab-notes {
     padding-top: 32px;
   }
 
@@ -619,9 +564,8 @@ main {
   }
 
   .book-cover {
-    min-height: 200px;
-    padding: 20px;
-    border-radius: 18px;
+    width: min(100%, 230px);
+    padding: 22px 18px 18px 32px;
   }
 
   .category-card {
@@ -633,11 +577,4 @@ main {
     font-size: 1.15rem;
   }
 
-  .note {
-    padding: 20px 18px;
-  }
-
-  .note span {
-    margin-bottom: 10px;
-  }
 }

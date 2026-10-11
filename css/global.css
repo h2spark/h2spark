@@ -19,16 +19,21 @@
   --border: rgba(255, 255, 255, 0.12);
   --radius: 22px;
   --topbar-height: 76px;
+  /* Rubik has no Armenian letters, so Armenian text uses the Noto Armenian fonts */
+  --font-body: "Rubik", "Noto Sans Armenian", sans-serif;
+  --font-display: "Noto Serif Armenian", "Rubik", serif;
 }
 
 html {
+  /* Slide-in animations start slightly off-screen; never let them cause sideways scrolling */
+  overflow-x: clip;
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
 }
 
 body {
-  font-family: "Rubik", sans-serif;
+  font-family: var(--font-body);
   color: var(--text);
   background:
     radial-gradient(circle at top, rgba(125, 211, 252, 0.18), transparent 28%),
@@ -89,6 +94,8 @@ select {
   align-items: center;
   gap: 10px;
   min-height: 44px;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
   font-weight: 700;
   letter-spacing: 0.02em;
 }
@@ -186,14 +193,14 @@ main {
   display: inline-block;
   margin-bottom: 10px;
   color: var(--accent);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-size: 0.95rem;
+  font-weight: 500;
 }
 
 h1, h2, h3, h4 {
-  line-height: 1.1;
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.15;
   overflow-wrap: anywhere;
 }
 
@@ -244,7 +251,27 @@ h3 {
 }
 
 .page-hero {
+  position: relative;
   padding: 32px 0 18px;
+}
+
+.page-hero > :not(.page-mark) {
+  position: relative;
+  z-index: 1;
+}
+
+/* Each section's emoji floats faintly behind its title */
+.page-mark {
+  position: absolute;
+  top: 50%;
+  right: 4%;
+  font-size: clamp(4.5rem, 3rem + 8vw, 9rem);
+  line-height: 1;
+  opacity: 0.16;
+  rotate: -12deg;
+  translate: 0 -50%;
+  pointer-events: none;
+  user-select: none;
 }
 
 .page-title {
@@ -290,8 +317,51 @@ h3 {
   border-bottom: 1px solid var(--border);
 }
 
+/* Real photos fill the picture area */
+.gallery-visual img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.gallery-visual:has(img) {
+  min-height: 0;
+}
+
 .gallery-item figcaption {
   padding: 18px 18px 20px;
+}
+
+/* A section with no work yet: an honest note instead of made-up examples */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 40px 20px 44px;
+  text-align: center;
+}
+
+.empty-orb {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 12px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #fef3c7 0%, #e0f2fe 16%, #7dd3fc 35%, #a78bfa 70%, #1f2937 100%);
+}
+
+.empty-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 1rem + 0.8vw, 1.5rem);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.empty-state p:not(.empty-title) {
+  max-width: 420px;
+  color: var(--muted);
+  line-height: 1.6;
 }
 
 .gallery-item h3 {
@@ -316,9 +386,21 @@ h3 {
     gap: 20px;
   }
 
-  /* An odd last card fills the whole row instead of sitting alone */
-  .gallery-item:last-child:nth-child(odd) {
+  /* A card left alone on the last row (or the only card) fills the row, picture beside text */
+  .gallery-grid .gallery-item:last-child:nth-child(odd) {
     grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: minmax(0, 280px) minmax(0, 1fr);
+    align-items: center;
+  }
+
+  .gallery-grid .gallery-item:last-child:nth-child(odd) .gallery-visual {
+    border-bottom: 0;
+    border-right: 1px solid var(--border);
+  }
+
+  .gallery-grid .gallery-item:last-child:nth-child(odd) figcaption {
+    padding: 24px 28px;
   }
 }
 
@@ -328,8 +410,19 @@ h3 {
     gap: 22px;
   }
 
-  .gallery-item:last-child:nth-child(odd) {
+  /* Three columns: an odd last card is a normal card again, unless it is the only one */
+  .gallery-grid .gallery-item:last-child:nth-child(odd):not(:only-child) {
     grid-column: auto;
+    display: block;
+  }
+
+  .gallery-grid .gallery-item:last-child:nth-child(odd):not(:only-child) .gallery-visual {
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .gallery-grid .gallery-item:last-child:nth-child(odd):not(:only-child) figcaption {
+    padding: 18px 18px 20px;
   }
 }
 

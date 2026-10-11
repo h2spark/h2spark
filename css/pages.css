@@ -115,7 +115,176 @@ body {
   background: linear-gradient(135deg, rgba(251, 191, 36, 0.2), rgba(134, 239, 172, 0.15));
 }
 
+/* About page: Hayk's photo, bio and a timeline that grows over time */
+.about-page {
+  background: linear-gradient(180deg, #0f1229 0%, #1d1440 100%);
+}
+
+.about-page .page-title {
+  color: #e9d5ff;
+}
+
+.profile {
+  display: grid;
+  grid-template-columns: minmax(0, 320px) minmax(0, 1fr);
+  gap: 48px;
+  align-items: center;
+  padding: 32px 0 36px;
+}
+
+.profile-intro .page-subtitle {
+  margin-bottom: 26px;
+  line-height: 1.8;
+}
+
+.photo-frame {
+  position: relative;
+  padding: 5px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2), var(--accent-3));
+  transition: transform 0.3s ease;
+}
+
+.photo-frame img {
+  width: 100%;
+  height: auto;
+  border-radius: 19px;
+}
+
+.photo-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  padding: 7px 11px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  background: rgba(12, 16, 30, 0.78);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.profile-photo figcaption {
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.profile-heading {
+  margin-bottom: 14px;
+  font-size: 1.15rem;
+}
+
+.profile-tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Each interest links to its section and wears that section's colour */
+.profile-tags a {
+  --tag: 167, 139, 250;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1px solid rgba(var(--tag), 0.35);
+  border-radius: 14px;
+  background: rgba(var(--tag), 0.14);
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.profile-tags a.books {
+  --tag: 129, 140, 248;
+}
+
+.profile-tags a.experiments {
+  --tag: 52, 211, 153;
+}
+
+.profile-tags a.d3 {
+  --tag: 244, 114, 182;
+}
+
+.profile-tags a.origami {
+  --tag: 251, 191, 36;
+}
+
+/* Timeline: the year is written once, its steps hang from the line below it */
+.timeline-group + .timeline-group {
+  margin-top: 22px;
+}
+
+.timeline-year {
+  margin-bottom: 12px;
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.timeline {
+  list-style: none;
+  display: grid;
+  gap: 16px;
+  padding-left: 22px;
+  border-left: 2px solid rgba(125, 211, 252, 0.3);
+  line-height: 1.6;
+}
+
+.timeline li {
+  position: relative;
+}
+
+.timeline li::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: -29px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  box-shadow: 0 0 0 4px rgba(125, 211, 252, 0.15);
+}
+
+
+@media (hover: hover) {
+  .photo-frame:hover {
+    transform: translateY(-4px) rotate(-1deg);
+  }
+
+  .profile-tags a:hover {
+    transform: translateY(-2px);
+    background: rgba(var(--tag), 0.26);
+    border-color: rgba(var(--tag), 0.55);
+  }
+}
+
+/* Tablets in portrait and phones: photo on top, smaller */
+@media (max-width: 767.98px) {
+  .profile {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+    padding: 16px 0 28px;
+  }
+
+  .profile-photo {
+    width: min(100%, 280px);
+    margin: 0 auto;
+  }
+}
+
 @media (max-width: 599.98px) {
+  .profile-photo {
+    width: min(100%, 240px);
+  }
+
   .page-shell {
     padding-top: 24px;
   }

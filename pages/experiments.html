@@ -6,7 +6,7 @@
     <title>Փորձեր • Իմ Լաբորատորիան</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Armenian:wght@400;500;700&family=Noto+Serif+Armenian:wght@600;700;800&family=Rubik:wght@400;500;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../css/global.css" />
     <link rel="stylesheet" href="../css/pages.css" />
     <link rel="stylesheet" href="../css/animations.css" />
@@ -32,13 +32,14 @@
           <a href="experiments.html" class="active">Փորձեր</a>
           <a href="3d-creations.html">3D ստեղծագործություններ</a>
           <a href="origamis.html">Օրիգամի</a>
+          <a href="about.html">Իմ մասին</a>
         </nav>
       </div>
     </header>
 
     <main class="page-shell container">
       <section class="page-hero">
-        <p class="eyebrow">Փորձերի բաժին</p>
+        <span class="page-mark" aria-hidden="true">🧪</span>
         <h1 class="page-title">Սովորելու, դիտարկելու և բացահայտելու</h1>
         <p class="page-subtitle">
           Ես սիրում եմ դիտարկել, հարցեր տալ, փորձեր անել և տեսնել՝ ինչ է տեղի ունենում։
@@ -47,37 +48,37 @@
       </section>
 
       <section class="page-hero-block content-panel">
+        <div class="empty-state">
+          <span class="empty-orb" aria-hidden="true"></span>
+          <p class="empty-title">Առաջին փորձը շուտով այստեղ կլինի</p>
+          <p>Հենց ավարտեմ, կտեղադրեմ նկարներով և արդյունքներով։</p>
+        </div>
+
+        <!--
+          Երբ առաջին աշխատանքը պատրաստ լինի.
+          1. Ջնջիր վերևի empty-state բլոկը։
+          2. Նկարը դիր assets/images/ թղթապանակում։
+          3. Հանիր այս մեկնաբանության սկզբի և վերջի նշանները, որ ներքևի կոդը երևա։
+          Ամեն նոր աշխատանքի համար պատճենիր մեկ <figure>…</figure>։
+
         <div class="gallery-grid">
           <figure class="gallery-item">
-            <div class="gallery-visual">🧪</div>
+            <div class="gallery-visual">
+              <img src="../assets/images/first-experiment.jpg" width="1200" height="900" alt="Փորձի նկարը" loading="lazy" />
+            </div>
             <figcaption>
-              <h3>Ջրի գույնը</h3>
-              <p>Ջրի մեջ տարբեր նյութեր ավելացնելով՝ դիտարկել, թե ինչպես են փոփոխվում գույնը և ձևը։</p>
-            </figcaption>
-          </figure>
-
-          <figure class="gallery-item">
-            <div class="gallery-visual">🌱</div>
-            <figcaption>
-              <h3>Սերմերի ուժ</h3>
-              <p>Սերմերի աճը տարբեր պայմաններում՝ ջուր, լույս, և՛ առանց, և՛ առկայությամբ։</p>
-            </figcaption>
-          </figure>
-
-          <figure class="gallery-item">
-            <div class="gallery-visual">🔬</div>
-            <figcaption>
-              <h3>Գիտական դիտարկում</h3>
-              <p>Թղթի, հեղուկի, լույսի և ձևի փոխազդեցությունները՝ իմ փոքրիկ լաբորատորությունում։</p>
+              <h3>Վերնագիր</h3>
+              <p>Կարճ նկարագրություն՝ ինչ եմ արել և ինչ ստացվեց։</p>
             </figcaption>
           </figure>
         </div>
+        -->
       </section>
     </main>
 
     <footer class="site-footer">
       <div class="container footer-wrap">
-        <p>© 2026 | Հայկ Հակոբյան • Իմ Լաբորատորիան</p>
+        <p>© 2026 Հայկ Հակոբյան</p>
       </div>
     </footer>
   </body>

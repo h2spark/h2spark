@@ -129,8 +129,42 @@
   animation: slideInUp 0.7s ease-out;
 }
 
-.about-card {
-  animation: slideInUp 0.7s ease-out;
+/* Section emoji behind page titles, and the method orbs */
+.page-mark {
+  animation: float 6s ease-in-out infinite;
+}
+
+.note-orb {
+  animation: pulse 2.4s ease-in-out infinite;
+}
+
+.note.try .note-orb {
+  animation-delay: 0.8s;
+}
+
+.note.create .note-orb {
+  animation-delay: 1.6s;
+}
+
+.empty-orb {
+  animation: float 4s ease-in-out infinite, glow 3s ease-in-out infinite;
+}
+
+/* Author chip and About page */
+.author-avatar {
+  animation: glow 3s ease-in-out infinite;
+}
+
+.profile-photo {
+  animation: slideInLeft 0.8s ease-out;
+}
+
+.profile-intro {
+  animation: slideInRight 0.8s ease-out;
+}
+
+.journey {
+  animation: slideInUp 0.7s ease-out 0.2s both;
 }
 
 .photo-frame {
@@ -180,7 +214,9 @@
 /* Phones and tablets: slide in from below, so nothing pokes out sideways */
 @media (max-width: 899.98px) {
   .hero-copy,
-  .hero-visual {
+  .hero-visual,
+  .profile-photo,
+  .profile-intro {
     animation-name: slideInUp;
   }
 }
