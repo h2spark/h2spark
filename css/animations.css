@@ -129,6 +129,26 @@
   animation: slideInUp 0.7s ease-out;
 }
 
+.about-card {
+  animation: slideInUp 0.7s ease-out;
+}
+
+.photo-frame {
+  animation: glow 3s ease-in-out infinite;
+}
+
+.photo-badge {
+  animation: float 4s ease-in-out infinite;
+}
+
+.timeline li::before {
+  animation: pulse 2.4s ease-in-out infinite;
+}
+
+.timeline li:nth-child(2n)::before {
+  animation-delay: 1.2s;
+}
+
 .button {
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }

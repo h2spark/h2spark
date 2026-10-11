@@ -341,8 +341,135 @@ main {
   z-index: 1;
 }
 
+/* About me: Hayk's photo and a short bio that grows over time */
+.about {
+  padding-top: 44px;
+}
+
+.about-card {
+  display: grid;
+  grid-template-columns: minmax(0, 380px) minmax(0, 1fr);
+  gap: 40px;
+  align-items: center;
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: rgba(15, 23, 42, 0.82);
+  box-shadow: var(--shadow);
+}
+
+.photo-frame {
+  position: relative;
+  padding: 6px;
+  border-radius: 26px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2), var(--accent-3));
+  transition: transform 0.3s ease;
+}
+
+/* The whole photo is shown (no cropping), so Hayk's brother on the right always stays visible */
+.photo-frame img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+
+.photo-badge {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  padding: 8px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  background: rgba(12, 16, 30, 0.78);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.about-photo figcaption {
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.about-text {
+  margin: 16px 0 26px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.about-subtitle {
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+}
+
+.about-tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 26px;
+}
+
+.about-tags li {
+  padding: 8px 12px;
+  border: 1px solid rgba(167, 139, 250, 0.28);
+  border-radius: 999px;
+  background: rgba(167, 139, 250, 0.12);
+  transition: all 0.2s ease;
+}
+
+.timeline {
+  list-style: none;
+  display: grid;
+  gap: 14px;
+  padding-left: 22px;
+  border-left: 2px solid rgba(125, 211, 252, 0.3);
+}
+
+.timeline li {
+  position: relative;
+}
+
+.timeline li::before {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: -29px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  box-shadow: 0 0 0 4px rgba(125, 211, 252, 0.15);
+}
+
+.timeline-year {
+  display: block;
+  margin-bottom: 2px;
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.timeline p {
+  line-height: 1.6;
+}
+
 /* Hover effects only for mouse users; on touch screens they stick after a tap */
 @media (hover: hover) {
+  .photo-frame:hover {
+    transform: translateY(-4px) rotate(-1deg);
+  }
+
+  .about-tags li:hover {
+    background: rgba(167, 139, 250, 0.24);
+    border-color: rgba(167, 139, 250, 0.45);
+  }
+
   .feature-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 32px 80px rgba(125, 211, 252, 0.25);
@@ -410,13 +537,35 @@ main {
     min-height: 340px;
   }
 
+  .about-card {
+    grid-template-columns: minmax(0, 300px) minmax(0, 1fr);
+    gap: 28px;
+  }
+
   .book-cover {
     min-height: 260px;
   }
 }
 
+/* Small tablets and phones: photo on top, bio underneath */
+@media (max-width: 699.98px) {
+  .about-card {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .about-photo {
+    width: min(100%, 360px);
+    margin: 0 auto;
+  }
+}
+
 /* Phones */
 @media (max-width: 599.98px) {
+  .about-card {
+    padding: 14px 14px 20px;
+  }
+
   .hero {
     gap: 24px;
     padding: 28px 0 16px;
@@ -459,7 +608,8 @@ main {
 
   .featured,
   .categories,
-  .lab-notes {
+  .lab-notes,
+  .about {
     padding-top: 32px;
   }
 
