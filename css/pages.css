@@ -295,7 +295,7 @@ body {
   padding: 8px 0 52px;
 }
 
-.reader .book-cover {
+.reader .cover-art {
   width: min(100%, 280px);
 }
 
@@ -414,7 +414,7 @@ body {
     padding-bottom: 36px;
   }
 
-  .reader .book-cover {
+  .reader .cover-art {
     width: min(100%, 220px);
   }
 

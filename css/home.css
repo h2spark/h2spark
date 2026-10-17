@@ -154,10 +154,10 @@ main {
   right: 24px;
   bottom: 24px;
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  align-items: center;
+  gap: 14px;
   min-width: 180px;
-  padding: 18px 18px 16px;
+  padding: 14px 18px 14px 14px;
   border: 1px solid rgba(255, 255, 255, 0.12);
   background: rgba(12, 16, 30, 0.8);
   border-radius: 18px;
@@ -165,6 +165,20 @@ main {
   backdrop-filter: blur(8px);
   box-shadow: 0 8px 32px rgba(15, 23, 42, 0.6);
   transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.lab-cover {
+  flex-shrink: 0;
+  width: 46px;
+  height: auto;
+  border-radius: 3px 6px 6px 3px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
+}
+
+.lab-card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .lab-tag {
@@ -505,9 +519,13 @@ main {
     right: 14px;
     bottom: 14px;
     min-width: 0;
-    gap: 6px;
-    padding: 12px 14px;
+    gap: 10px;
+    padding: 10px 14px 10px 10px;
     border-radius: 14px;
+  }
+
+  .lab-cover {
+    width: 38px;
   }
 
   .lab-card strong {
