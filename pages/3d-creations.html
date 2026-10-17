@@ -47,31 +47,74 @@
         </p>
       </section>
 
-      <section class="page-hero-block content-panel">
-        <div class="empty-state">
-          <span class="empty-orb" aria-hidden="true"></span>
-          <p class="empty-title">Առաջին 3D ստեղծագործությունը շուտով այստեղ կլինի</p>
-          <p>Հենց պատրաստ լինի, կտեղադրեմ նկարով ու պատմությամբ։</p>
-        </div>
+      <section class="page-hero-block content-panel creations">
+        <figure class="creation-video">
+          <video controls playsinline muted loop preload="none" poster="../assets/images/3d/box-poster.webp" width="720" height="1280" aria-label="Կանաչ արկղիկ՝ պատրաստված 3D գրիչով, տեսանյութ">
+            <source src="../assets/images/3d/box-720.webm" type='video/webm; codecs="av01.0.05M.08"' />
+            <source src="../assets/images/3d/box-720.mp4" type='video/mp4; codecs="avc1.640028"' />
+          </video>
+          <figcaption>
+            <h3>Կանաչ արկղիկ</h3>
+          </figcaption>
+        </figure>
 
-        <!--
-          Երբ առաջին աշխատանքը պատրաստ լինի.
-          1. Ջնջիր վերևի empty-state բլոկը։
-          2. Նկարը դիր assets/images/ թղթապանակում։
-          3. Հանիր այս մեկնաբանության սկզբի և վերջի նշանները, որ ներքևի կոդը երևա։
-          Ամեն նոր աշխատանքի համար պատճենիր մեկ <figure>…</figure>։
-
-        <div class="gallery-grid">
+        <div class="gallery-grid creations-grid">
           <figure class="gallery-item">
-            <div class="gallery-visual">
-              <img src="../assets/images/first-3d.jpg" width="1200" height="900" alt="3D ստեղծագործության նկարը" loading="lazy" />
+            <div class="gallery-visual on-display">
+              <img src="../assets/images/3d/car-480.webp" srcset="../assets/images/3d/car-480.webp 480w, ../assets/images/3d/car-774.webp 774w" sizes="(max-width: 479px) calc(100vw - 92px), (max-width: 999px) calc(50vw - 70px), 360px" width="774" height="481" alt="Դեղին ու կապույտ սպորտային մեքենա՝ պատրաստված 3D գրիչով" loading="lazy" decoding="async" />
             </div>
             <figcaption>
-              <h3>Վերնագիր</h3>
-              <p>Կարճ նկարագրություն՝ ինչ եմ արել և ինչ ստացվեց։</p>
+              <h3>Սպորտային մեքենա</h3>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <div class="gallery-visual on-display">
+              <img src="../assets/images/3d/eiffel-480.webp" srcset="../assets/images/3d/eiffel-480.webp 259w, ../assets/images/3d/eiffel-960.webp 517w" sizes="(max-width: 479px) calc(100vw - 92px), (max-width: 999px) calc(50vw - 70px), 360px" width="517" height="960" alt="Կանաչ ու նարնջագույն Էյֆելյան աշտարակ՝ պատրաստված 3D գրիչով" loading="lazy" decoding="async" />
+            </div>
+            <figcaption>
+              <h3>Էյֆելյան աշտարակ</h3>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <div class="gallery-visual on-display">
+              <img src="../assets/images/3d/scooter-480.webp" srcset="../assets/images/3d/scooter-480.webp 277w, ../assets/images/3d/scooter-688.webp 396w" sizes="(max-width: 479px) calc(100vw - 92px), (max-width: 999px) calc(50vw - 70px), 360px" width="396" height="688" alt="Մանուշակագույն սկուտեր՝ 29 համարով, պատրաստված 3D գրիչով" loading="lazy" decoding="async" />
+            </div>
+            <figcaption>
+              <h3>Սկուտեր</h3>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <div class="gallery-visual on-display">
+              <img src="../assets/images/3d/guitar-480.webp" srcset="../assets/images/3d/guitar-480.webp 480w, ../assets/images/3d/guitar-960.webp 960w" sizes="(max-width: 479px) calc(100vw - 92px), (max-width: 999px) calc(50vw - 70px), 360px" width="960" height="895" alt="Անանուխագույն ու վարդագույն կիթառ՝ պատրաստված 3D գրիչով" loading="lazy" decoding="async" />
+            </div>
+            <figcaption>
+              <h3>Կիթառ</h3>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <div class="gallery-visual on-display">
+              <img src="../assets/images/3d/sealion-480.webp" srcset="../assets/images/3d/sealion-480.webp 480w, ../assets/images/3d/sealion-960.webp 960w" sizes="(max-width: 479px) calc(100vw - 92px), (max-width: 999px) calc(50vw - 70px), 360px" width="960" height="479" alt="Մանուշակագույն ու սպիտակ ծովառյուծ՝ պատրաստված 3D գրիչով" loading="lazy" decoding="async" />
+            </div>
+            <figcaption>
+              <h3>Ծովառյուծ</h3>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <div class="gallery-visual on-display">
+              <img src="../assets/images/3d/knife-480.webp" srcset="../assets/images/3d/knife-480.webp 247w, ../assets/images/3d/knife-794.webp 408w" sizes="(max-width: 479px) calc(100vw - 92px), (max-width: 999px) calc(50vw - 70px), 360px" width="408" height="794" alt="Դեղին ու սև կոր դանակ՝ պատրաստված 3D գրիչով" loading="lazy" decoding="async" />
+            </div>
+            <figcaption>
+              <h3>Դանակ</h3>
             </figcaption>
           </figure>
         </div>
+
+        <!--
+          Նոր աշխատանք ավելացնելու համար.
+          Լուսանկար՝ պատճենիր մեկ <figure class="gallery-item">…</figure> և փոխիր նկարն ու վերնագիրը
+          (WebP՝ երկու չափով, assets/images/3d/ թղթապանակում)։
+          Տեսանյութ՝ պատճենիր <figure class="creation-video">…</figure>-ը (WebM AV1 + MP4 H.264, առանց ձայնի)։
+          Բնօրինակները պահվում են ռեպոյից դուրս՝ originals/3d-creations/ թղթապանակում։
         -->
       </section>
     </main>
