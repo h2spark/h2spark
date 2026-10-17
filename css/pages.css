@@ -283,3 +283,155 @@ body {
     padding: 14px;
   }
 }
+
+/* Book reading page */
+.reader {
+  padding-top: 40px;
+}
+
+.book-intro {
+  display: flex;
+  justify-content: center;
+  padding: 8px 0 52px;
+}
+
+.reader .book-cover {
+  width: min(100%, 280px);
+}
+
+.story {
+  max-width: 680px;
+  margin: 0 auto;
+  color: #e6eefb;
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 1rem + 0.4vw, 1.25rem);
+  font-weight: 400;
+  line-height: 1.9;
+}
+
+.story p + p {
+  margin-top: 1em;
+}
+
+.story-page + .story-page {
+  position: relative;
+  margin-top: 56px;
+  padding-top: 56px;
+}
+
+/* Between pages: three small orbs in the site's colours instead of page numbers */
+.story-page + .story-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 62px;
+  height: 10px;
+  translate: -50% -50%;
+  background:
+    radial-gradient(circle, var(--accent) 0 3px, transparent 4px) left center / 10px 10px no-repeat,
+    radial-gradient(circle, var(--accent-2) 0 3px, transparent 4px) center / 10px 10px no-repeat,
+    radial-gradient(circle, var(--accent-3) 0 3px, transparent 4px) right center / 10px 10px no-repeat;
+}
+
+/* A large first letter opens the story */
+.story-page:first-child p:first-of-type::first-letter {
+  float: left;
+  margin: 0.1em 0.12em 0 0;
+  color: var(--accent-2);
+  font-size: 3.4em;
+  font-weight: 800;
+  line-height: 0.8;
+}
+
+/* Hayk's pictures: a little wider than the text on big screens */
+.story-figure {
+  width: min(calc(100vw - 32px), 820px);
+  margin: 32px 0 32px 50%;
+  translate: -50% 0;
+}
+
+.story-figure img {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: var(--shadow);
+}
+
+.story-end {
+  max-width: 680px;
+  margin: 72px auto 0;
+  text-align: center;
+}
+
+.story-end-mark {
+  margin-bottom: 24px;
+  color: var(--accent-3);
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+
+.story-end-note {
+  margin: -12px 0 28px;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.story-end-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* Thin line under the top bar that fills up while reading */
+.reading-progress {
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2), var(--accent-3));
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+@supports not (animation-timeline: scroll()) {
+  .reading-progress {
+    display: none;
+  }
+}
+
+@media (max-width: 599.98px) {
+  .reader {
+    padding-top: 24px;
+  }
+
+  .book-intro {
+    padding-bottom: 36px;
+  }
+
+  .reader .book-cover {
+    width: min(100%, 220px);
+  }
+
+  .story-page + .story-page {
+    margin-top: 40px;
+    padding-top: 40px;
+  }
+
+  .story-figure {
+    margin: 24px 0 24px 50%;
+  }
+
+  .story-figure img {
+    border-radius: 14px;
+  }
+
+  .story-end-actions .button {
+    flex: 1 1 100%;
+  }
+}

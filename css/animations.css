@@ -216,3 +216,29 @@
     animation-name: slideInUp;
   }
 }
+
+/* Book reading page: progress line and pictures that appear while scrolling */
+@keyframes reading-progress {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@supports (animation-timeline: scroll()) {
+  .reading-progress {
+    animation: reading-progress linear both;
+    animation-timeline: scroll(root);
+  }
+
+  .story-figure {
+    animation: scaleIn linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 60%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .story-figure {
+    animation: none !important;
+  }
+}
